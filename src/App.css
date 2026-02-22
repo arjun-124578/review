@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f7f8ff;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* login page */
+.login-button {
+    background-color: #f5aa33;
+    display: inline;
+    padding: 10px 50px;
+    width: 15%;
+}
+
+.text-gray {
+    color: rgb(128, 127, 127);
+}
+
+
+.login-img {
+    width: 100%;
+    height: 100vh !important;
+}
+
+.categoryCardImg {
+    height: 90px;
+    width: 90px;
+}
+
+.categoryCardsText {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.profPicture {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.profDrop {
+    height: 50px;
+}
+
+.dashboardCategoriesImg {
+    height: 50px;
+    width: 50px
+}
+
+.bg-blue {
+    background-color: rgb(205, 235, 242);
+}
+
+.bg-pink {
+    background-color: pink;
+}

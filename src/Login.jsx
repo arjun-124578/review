@@ -10,7 +10,9 @@ const Login = ({ handleValidate, loginErrors, loginCred, setLoginCred }) => {
             <div className="row">
                 <div className="col-lg-6 col-12 bg-white">
                     <div class="d-flex flex-column justify-content-around h-75 ms-5 bg-white">
-                        <Logo/>
+                        <div className="col-12 bg-white">
+                            <Logo/>
+                        </div>
                         <div className='bg-white'>
                             <h3 className='py-2 bg-white' style={{ fontWeight: "650" }}>Welcome !</h3>
                             <p className='pb-4 text-gray bg-white'>welcome admin enter your details</p>

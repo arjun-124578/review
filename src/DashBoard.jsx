@@ -8,25 +8,25 @@ const DashBoard = () => {
     return (
         <div className='container-fluid '>
             <div className="row">
-                <div className="col-12 col-md-2">
+                <div className="col-12 col-md-4 col-lg-2">
                     <Sidebar />
                 </div>
-                <div className="col-12 col-md-10 ">
+                <div className="col-12 col-lg-10 col-md-8 ">
                     <div className="col-12">
                         <Topbar
                         title="dashboard"/>
                     </div>
-                    <div className="col-12 mt-4 ">
+                    <div className="col-12 mt-4  ">
                         <div className='bg-white row g-0 '>
                             {
                                 dashboarCards.map((item,index) => {
                                     return (
-                                        <div className={`col-12 col-md-3 p-5`}>
+                                        <div className={`col-12 col-lg-3  p-5 bg-white`}>
                                             <div className={`p-3 rounded-2 ${index % 2 === 0 ? "bg-pink" : "bg-blue"}`}>
                                                 <div style={{backgroundColor:"inherit"}} className='fw-bold'>{item[0]}</div>
                                                 <div className='d-flex' style={{backgroundColor:"inherit"}} >
                                                     <h2 className='bg-lightblue fw-bold mt-2' style={{backgroundColor:"inherit"}}>{item[1]}</h2>
-                                                    <p className='ms-4 mt-3 fw-bold' style={{ color: item[3] ? "green" : "red",backgroundColor:"inherit" }}><span style={{backgroundColor:"inherit"}}>{item[3] ? "+" : "-"}</span>{`${item[2]}%`}</p>
+                                                    <p className='ms-4 mt-3' style={{ color: item[3] ? "green" : "red",backgroundColor:"inherit" }}><span style={{backgroundColor:"inherit"}}>{item[3] ? "+" : "-"}</span>{`${item[2]}%`}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -41,7 +41,7 @@ const DashBoard = () => {
                                 <img src={graph} style={{ height: "410px", width: "837px"}} />
                             </div>
                         </div>
-                        <div className="col-12 p-2 col-md-3 bg-white mt-1 pe-md-5">
+                        <div className="col-12 p-2 col-lg-3 bg-white mt-1 pe-lg-5">
                             <div className='p-4 bg-light rounded-4'>
                                 <h6 className='bg-light fw-bold'>Categories</h6>
                                 <div className='bg-light'>

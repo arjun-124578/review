@@ -2,14 +2,14 @@ import React from 'react'
 import Sidebar from './Sidebar'
 import { addNewVendorContent, addressDetailsDropdown, addressDetailstext, SubDetailsDropdown, subDetailstext, addressDetailstext2, categoryCards } from './assets/content'
 import Topbar from './Topbar'
-const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,handleSubmit}) => {
+const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange, handleSubmit }) => {
     return (
         <div class="container-fluid ">
             <div className="row">
-                <div className="col-12 col-lg-2">
+                <div className="col-12 col-lg-2 col-md-4">
                     <Sidebar />
                 </div>
-                <div className="col-12 col-lg-10">
+                <div className="col-12 col-lg-10 col-md-8">
                     <Topbar
                         title="vendor" />
                     <div className="row mt-4">
@@ -21,7 +21,7 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
                                     </div>
                                     {addNewVendorContent.map((item) => {
                                         return (
-                                            <div class={` col-12 col-md-${item[1]} mb-4 bg-white p-2`}>
+                                            <div class={` col-12 col-lg-${item[1]} mb-4 bg-white p-2`}>
                                                 <label forHtml="" className="text bg-white">{item[0]}</label>
                                                 <input type="text" name={item[2]} value={formDetails[item[2]] || ""} onChange={handleChange} className='form-control' />
                                             </div>
@@ -33,7 +33,7 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
                                     {
                                         SubDetailsDropdown.map((item) => {
                                             return (
-                                                <div className={`dropdown-center col-12 col-md-${item[1]} mb-4 bg-white p-2 d-flex flex-column`}>
+                                                <div className={`dropdown-center col-12 col-lg-${item[1]} mb-4 bg-white p-2 d-flex flex-column`}>
                                                     <label htmlFor="" className='bg-white'>{item[0]}</label>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -62,7 +62,7 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
                                     {
                                         addressDetailstext.map((item) => {
                                             return (
-                                                <div class={`col-md-${item[1]} col-12 mb-4 bg-white p-2`}>
+                                                <div class={`col-lg-${item[1]} col-12 mb-4 bg-white p-2`}>
                                                     <label forHtml="" className="text bg-white">{item[0]}</label>
                                                     <input type="text" className='form-control' name={item[2]} value={formDetails[item[2]] || ""} onChange={handleChange} />
                                                 </div>
@@ -72,7 +72,7 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
                                     {
                                         addressDetailsDropdown.map((item) => {
                                             return (
-                                                <div className={`dropdown-center col-12 col-md-${item[1]} mb-4 bg-white p-2 d-flex flex-column`}>
+                                                <div className={`dropdown-center col-12 col-lg-${item[1]} mb-4 bg-white p-2 d-flex flex-column`}>
                                                     <label htmlFor="" className='bg-white'>{item[0]}</label>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="#">Action</a></li>
@@ -89,24 +89,24 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
                                     {
                                         addressDetailstext2.map((item) => {
                                             return (
-                                                <div class={`col-12 col-md-${item[1]} mb-4 bg-white p-2`}>
+                                                <div class={`col-12 col-lg-${item[1]} mb-4 bg-white p-2`}>
                                                     <label forHtml="" className="text bg-white">{item[0]}</label>
                                                     <input type="text" className='form-control' name={item[2]} value={formDetails[item[2]] || ""} onChange={handleChange} />
                                                 </div>
                                             )
                                         })
                                     }
-                                    <div className="col-6 col-md-4 bg-white">
+                                    <div className="col-12 col-lg-6 bg-white">
                                         <div className='d-flex flex-column p-2 bg-white'>
                                             <label htmlFor="" className='bg-white fw-bold'>Add Shop Logo</label>
-                                           <input type="file"
+                                            <input type="file"
                                                 name="shopLogo"
                                                 accept="image/*"
                                                 onChange={handleFileChange}
                                                 alt="Submit" width="48" height="48" className='bg-white'></input>
                                         </div>
                                     </div>
-                                    <div className="col-6 col-md-4">
+                                    <div className="col-12 col-lg-6">
                                         <div className='d-flex flex-column p-2 bg-white'>
                                             <label htmlFor="" className='bg-white fw-bold'>Add Shop Images</label>
                                             <input type="file"
@@ -114,10 +114,9 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
                                                 accept="image/*"
                                                 onChange={handleFileChange}
                                                 alt="Submit" width="48" height="48" className='bg-white'></input>
-
                                         </div>
                                     </div>
-                                    <div className="col-12 bg-white mt-4">
+                                    <div className="col-12 bg-white my-4">
                                         <h6 className='bg-white mb-3 fw-bold'>Categories Dealing With</h6>
                                     </div>
 
@@ -126,7 +125,7 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
 
                                             return (
 
-                                                <div className={`col-md-${item[2]} col-6 bg-white d-flex flex-column mb-3`} onClick={() => { setFormDetails(...formDetails, !categories[index] ? item[1] : false) }}>
+                                                <div className={`col-lg-${item[2]} col-6 bg-white d-flex flex-column mb-3`} onClick={() => { setFormDetails(...formDetails, !categories[index] ? item[1] : false) }}>
                                                     <img src={item[0]} alt={item[0]} className='categoryCardImg bg-white' />
                                                     <label htmlFor="" className='ps-3 bg-white categoryCardsText'>{item[1]}</label>
                                                 </div>
@@ -135,9 +134,9 @@ const Form = ({ formDetails, setFormDetails, handleChange, handleFileChange,hand
 
                                         })
                                     }
-                                </div>
-                                <div className='w-100 d-flex justify-content-end pe-5'>
-                                    <button type="submit" className='btn btn-warning px-5'>Submit</button>
+                                    <div className='w-100 d-flex justify-content-center justify-content-lg-end pe-5 bg-white'>
+                                        <button type="submit" className='btn btn-warning px-5'>Submit</button>
+                                    </div>
                                 </div>
                             </form>
                         </div>
